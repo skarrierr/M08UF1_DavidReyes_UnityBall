@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0998767, g: 0.11382072, b: 0.10889371, a: 1}
+  m_IndirectSpecularColor: {r: 0.09987606, g: 0.11381994, b: 0.10889293, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2146,6 +2146,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb4973d89bd9b2448862671987c8db80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraController: {fileID: 1757598279}
+  inputActions: {fileID: -944628639613478452, guid: 7b8055cc7398b994c81dd69ed2af52a2,
+    type: 3}
 --- !u!1 &934916945 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4796031842033542315, guid: 545242d778260c14badb2d769c919bb9,
@@ -3631,7 +3634,8 @@ GameObject:
   - component: {fileID: 1757598275}
   - component: {fileID: 1757598274}
   - component: {fileID: 1757598278}
-  - component: {fileID: 1757598277}
+  - component: {fileID: 1757598280}
+  - component: {fileID: 1757598279}
   m_Layer: 3
   m_Name: Ball
   m_TagString: Player
@@ -3704,18 +3708,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1757598277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1757598273}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c042288a9cd360e40a4d1455a14795e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1757598278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3739,6 +3731,39 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   spawnPoint: {x: 0, y: 0, z: 0}
+--- !u!114 &1757598279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757598273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a71f288f60f43a458f1ba3e34ef344f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
+  distanceSpeed: 0
+  distanceLimits: {x: 0, y: 0}
+  centerSpeed: 0
+  target: 0
+  rotationSpeed: 0
+--- !u!114 &1757598280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757598273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02fcb135c3d95bd40b46af8d3cfdc621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballController: {fileID: 1757598278}
+  inputActions: {fileID: -944628639613478452, guid: 7b8055cc7398b994c81dd69ed2af52a2,
+    type: 3}
 --- !u!1 &1800979350
 GameObject:
   m_ObjectHideFlags: 0
