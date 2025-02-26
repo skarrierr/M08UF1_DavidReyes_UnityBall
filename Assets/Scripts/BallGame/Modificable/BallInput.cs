@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 public class BallInput : MonoBehaviour
 {
     public BallController ballController;
-    public Joystick virtualJoystick;
+    public VirtualJoystick virtualJoystick;
     public InputActionAsset inputActions;
 
     private InputAction moveAction;
@@ -17,17 +17,20 @@ public class BallInput : MonoBehaviour
     private Vector2 moveInput;
     private bool jumpPressed;
 
+   
+
+
     private void Awake()
     {
         moveAction = inputActions.FindAction("Move");
         jumpAction = inputActions.FindAction("Jump");
 
         moveAction.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
-        //print(moveInput);
+
         moveAction.canceled += ctx => moveInput = Vector2.zero;
-        //print(moveInput);
+        
         jumpAction.performed += ctx => jumpPressed = true;
-        //print(jumpAction);
+        
     }
 
     private void OnEnable()
@@ -44,11 +47,11 @@ public class BallInput : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Combina la entrada del InputAction y la del joystick virtual (si existe)
+       
         Vector2 finalInput = moveInput;
         if (virtualJoystick != null)
         {
-            //finalInput += virtualJoystick.InputVector;
+            finalInput += virtualJoystick.InputVector;
             finalInput = Vector2.ClampMagnitude(finalInput, 1f);
         }
         ballController.Move(finalInput);

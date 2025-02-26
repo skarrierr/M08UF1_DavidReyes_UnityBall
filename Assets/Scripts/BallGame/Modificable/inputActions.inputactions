@@ -18,7 +18,7 @@
                     "name": "Jump",
                     "type": "Value",
                     "id": "9ed4c7ba-909e-42bf-bccc-c7c5b1427f2e",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -82,8 +82,30 @@
                 },
                 {
                     "name": "",
+                    "id": "c3e58b7b-0ab0-43f9-8771-2d243fa3e19c",
+                    "path": "<AndroidJoystick>/stick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "0697103b-50c3-4452-bd0d-93c437f0b762",
                     "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4729aebe-d3f0-4a09-bf11-ca10bd7984e0",
+                    "path": "<Touchscreen>/primaryTouch",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -101,7 +123,7 @@
                     "name": "Rotate",
                     "type": "Value",
                     "id": "411a7e12-27c9-4cbc-b188-1f7232fe39f6",
-                    "expectedControlType": "Axis",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true

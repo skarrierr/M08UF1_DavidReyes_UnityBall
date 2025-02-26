@@ -27,7 +27,7 @@ public class CameraInput : MonoBehaviour
         zoomAction.canceled += ctx => zoomInput = 0;
 
         rotateAction.performed += ctx => rotationInput = ctx.ReadValue<Vector2>().x;    
-        rotateAction.canceled += ctx => rotationInput = 0;
+        
 
         switchTargetAction.performed += ctx => SwitchCameraTarget();
     }
@@ -37,16 +37,14 @@ public class CameraInput : MonoBehaviour
         
         cameraController.Zoom(zoomInput * Time.deltaTime * 50);
 
-        //print("zoomInput" + zoomInput);
 
         
-        cameraController.Rotate(rotationInput * Time.deltaTime * 100);
-        //print("rotationInput" + rotationInput);
+        cameraController.Rotate(rotationInput * Time.deltaTime * 12);
+        print("rotationInput" + rotationInput);
     }
-
+    
     private void SwitchCameraTarget()
     {
-        // Cambia entre los objetivos definidos en el CameraController
         if (cameraController.target == CameraController.Target.Ball)
             cameraController.SwitchTargetTarget();
         else if (cameraController.target == CameraController.Target.Target)
@@ -54,6 +52,8 @@ public class CameraInput : MonoBehaviour
         else
             cameraController.SwitchTargetBall();
     }
+
+    
 
     private void OnEnable()
     {
@@ -67,5 +67,25 @@ public class CameraInput : MonoBehaviour
         zoomAction.Disable();
         rotateAction.Disable();
         switchTargetAction.Disable();
+    }
+   
+    public void ZoomInButtonPressed()
+    {
+        cameraController.Zoom(0.5f);
+    }
+
+    
+    public void ZoomOutButtonPressed()
+    {
+        cameraController.Zoom(-0.5f);
+    }
+
+    public void RotateLeftButtonPressed()
+    {
+        cameraController.Rotate(-10f);
+    }
+    public void RotateRightButtonPressed()
+    {
+        cameraController.Rotate(10f);
     }
 }
